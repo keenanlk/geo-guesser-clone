@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { compose, withProps } from "recompose";
 import {
   withScriptjs,
@@ -6,6 +6,7 @@ import {
   GoogleMap,
   Marker,
   StreetViewPanorama,
+  SteetViewService,
   OverlayView,
 } from "react-google-maps";
 import { Container } from "react-bootstrap";
