@@ -4,6 +4,8 @@ import { Container } from "react-bootstrap";
 import Header from "./components/Header";
 import RegisterScreen from "./screens/RegisterScreen";
 import LoginScreen from "./screens/LoginScreen";
+import HomeScreen from "./screens/HomeScreen";
+import GameScreen from "./screens/GameScreen";
 
 const App = () => {
   return (
@@ -13,6 +15,8 @@ const App = () => {
         <Container>
           <Route path="/login" component={LoginScreen} />
           <Route path="/register" component={RegisterScreen} />
+          <Route path="/game" component={GameScreen} />
+          <Route path="/" component={HomeScreen} exact />
         </Container>
       </main>
     </Router>
