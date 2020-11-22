@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import MapContainer from "../components/MapContainer";
 import Loader from "../components/Loader";
+import { Button } from "react-bootstrap";
+import GuessModal from "../components/GuessModal";
 
 const GameScreen = (props) => {
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
+  const [guessedLatitude, setGuessedLatitude] = useState();
+  const [guessedLongitude, setGuessedLongitude] = useState();
   const [status, setStatus] = useState();
   const [scriptReady, setScriptReady] = useState(false);
 
@@ -27,8 +31,6 @@ const GameScreen = (props) => {
       setLatitude(data.location.latLng.lat());
       setLongitude(data.location.latLng.lng());
       setStatus("OK");
-
-      debugger;
     } else {
       getCoordinates(HandleCallback);
     }
@@ -64,6 +66,7 @@ const GameScreen = (props) => {
       ) : (
         <>
           <h1>gamescreen</h1>
+          <GuessModal />
           <MapContainer center={{ lat: latitude, lng: longitude }} />{" "}
         </>
       )}
